@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RazeSEED — FLARE Protocol (Alternate BG)</title>
-  <meta name="description" content="RazeSEED — AI + Blockchain: FLARE Protocol — Flop-to-Liquidity, AI Armory, Blockchain Blaze, Win-Win Inferno. Join waitlist." />
+  <title>RazeSEED — FLARE Protocol (Layman Version)</title>
+  <meta name="description" content="RazeSEED — Simple, clear explanation of AI + blockchain funding with FLARE Protocol. Join the waitlist." />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg:#000;
-      --bg-alt:#071017; /* deep-gray */
+      --bg-alt:#071017;
       --fg:#fff;
       --muted:#cfcfcf;
       --glass: rgba(255,255,255,0.03);
       --card-border: rgba(255,255,255,0.06);
-      --accent:#1e90ff; /* blue glow accent */
+      --accent:#1e90ff;
       --accent-soft: rgba(30,144,255,0.12);
       --radius:14px;
       --max-w:1160px;
@@ -23,71 +23,61 @@
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;font-family:"Poppins",system-ui,Arial;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max-w);margin:0 auto;padding:0 1.25rem}
+    .wrap{max-width:var(--max-w);margin:0 auto;padding:0 1rem}
 
-    /* Header (Apple-like) */
-    header{
-      position:fixed;inset:0 0 auto 0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;background:linear-gradient(180deg, rgba(0,0,0,0.94), rgba(0,0,0,0.82));backdrop-filter:blur(8px);z-index:1200;border-bottom:1px solid rgba(255,255,255,0.03)
-    }
+    /* Header */
+    header{position:fixed;inset:0 0 auto 0;height:var(--header-h);display:flex;align-items:center;justify-content:space-between;padding:0 1rem;background:linear-gradient(180deg, rgba(0,0,0,0.94), rgba(0,0,0,0.82));backdrop-filter:blur(8px);z-index:1200;border-bottom:1px solid rgba(255,255,255,0.03)}
     .brand{font-family:'Playfair Display',serif;font-weight:700;font-size:1.05rem;letter-spacing:0.6px}
     nav{display:flex;align-items:center;gap:1rem}
     nav ul{display:flex;gap:1rem;list-style:none;margin:0;padding:0;align-items:center}
-    nav a{font-weight:600;color:var(--fg);padding:8px 6px;border-radius:8px;transition:color .18s,background .18s}
+    nav a{font-weight:600;color:var(--fg);padding:8px 6px;border-radius:8px;transition:color .15s}
     nav a:hover{color:var(--accent)}
     .hamburger{display:none;background:transparent;border:0;color:var(--fg);font-size:1.2rem;cursor:pointer;padding:6px 8px}
 
-    /* Section base */
-    section{padding:calc(var(--header-h) + 36px) 0 72px}
+    /* Sections */
+    section{padding:calc(var(--header-h) + 28px) 0 72px}
     .alt{background:var(--bg-alt)}
     .center{text-align:center}
-    h1,h2,h3{font-family:'Playfair Display',serif;margin:0 0 0.6rem 0}
-    h1{font-size:clamp(1.4rem,4.5vw,2.5rem);line-height:1.05}
+    h1,h2,h3{font-family:'Playfair Display',serif;margin:0 0 0.5rem 0}
+    h1{font-size:clamp(1.4rem,4.5vw,2.6rem);line-height:1.05}
     h2{font-size:clamp(1.2rem,3.2vw,1.9rem)}
     p.lead{color:var(--muted);max-width:980px;margin:0 auto;line-height:1.6}
+    .small{font-size:.95rem;color:var(--muted)}
 
     /* Hero */
-    .hero{
-      min-height:calc(100vh - var(--header-h));
-      background-image:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1505765057868-4f9f9a0f1d66?auto=format&fit=crop&w=1600&q=60');
-      background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;position:relative;
-    }
+    .hero{min-height:calc(100vh - var(--header-h));background-image:linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1505765057868-4f9f9a0f1d66?auto=format&fit=crop&w=1600&q=60');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center}
     .hero-inner{position:relative;z-index:2;max-width:var(--max-w);padding:2rem}
-    .hero h1{font-size:clamp(1.6rem,5vw,3rem);text-shadow:0 10px 30px rgba(0,0,0,0.7)}
-    .hero p{color:var(--muted);font-size:clamp(0.95rem,2vw,1.15rem);margin-top:.8rem}
-    .cta-row{display:flex;gap:.9rem;justify-content:center;margin-top:1.25rem;flex-wrap:wrap}
+    .hero p{color:var(--muted);font-size:clamp(0.95rem,1.9vw,1.12rem);margin-top:.7rem}
+    .cta-row{display:flex;gap:.8rem;justify-content:center;margin-top:1rem;flex-wrap:wrap}
     .btn{padding:.85rem 1.25rem;border-radius:999px;font-weight:700;border:0;cursor:pointer}
     .btn-primary{background:var(--fg);color:var(--bg);box-shadow:0 8px 30px rgba(30,144,255,0.06)}
     .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:var(--fg)}
     .hero-note{margin-top:.6rem;color:var(--muted);font-size:.95rem}
 
-    /* Gimmicks (4-grid) */
-    .gimmick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2rem}
-    .g-card{background:var(--glass);border:1px solid var(--card-border);border-radius:16px;padding:1.25rem;min-height:220px;display:flex;flex-direction:column;gap:.6rem;position:relative;transition:transform .28s,box-shadow .28s}
-    .g-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(0,0,0,0.6);border-color:rgba(30,144,255,0.14)}
+    /* Gimmicks (4 grid) */
+    .gimmick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.25rem}
+    .g-card{background:var(--glass);border:1px solid var(--card-border);border-radius:16px;padding:1.1rem;min-height:200px;display:flex;flex-direction:column;gap:.5rem;transition:transform .24s}
+    .g-card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,0.5);border-color:rgba(30,144,255,0.12)}
     .g-badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,0.04);padding:6px 10px;border-radius:12px;font-size:.78rem;color:var(--muted)}
-    .g-card h3{margin-top:4px;font-size:1.05rem}
+    .g-card h3{margin:0;font-size:1.05rem}
     .g-card p{color:var(--muted);flex:1;font-size:.95rem}
-    .g-card ul{color:#bfbfbf;font-size:.9rem;margin-top:.6rem;padding-left:1rem}
+    .g-card ul{color:#d9eaff;font-size:.95rem;margin-top:.6rem;padding-left:1rem}
 
-    /* FLARE protocol (3-card) */
-    .flare-wrap{margin-top:1.25rem}
-    .flare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch}
-    .flare-card{background:linear-gradient(180deg, rgba(30,144,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:1.25rem;min-height:230px;display:flex;flex-direction:column;gap:.6rem;border:1px solid rgba(30,144,255,0.06);box-shadow:0 6px 22px rgba(30,144,255,0.02)}
-    .flare-icon{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg, rgba(30,144,255,0.18), rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--fg);margin-bottom:.4rem}
-    .flare-card h3{margin:0;font-size:1.05rem;color:var(--fg)}
-    .flare-card p{color:var(--muted);flex:1}
-    .flare-card ul{color:#e6eefc;font-size:.95rem;margin-top:.5rem;padding-left:1rem}
+    /* How it works (3 cards) */
+    .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+    .how-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:1rem;min-height:220px;display:flex;flex-direction:column;gap:.5rem;border:1px solid var(--card-border)}
+    .how-card h3{margin:0;font-size:1.05rem;color:var(--fg)}
+    .how-card ul{color:var(--muted);padding-left:1rem;margin-top:.6rem}
 
-    /* Win-win 3-column */
-    .win-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem;align-items:stretch}
-    .win-card{background:var(--glass);border-radius:14px;padding:1.15rem;min-height:240px;display:flex;flex-direction:column;gap:.6rem;border:1px solid var(--card-border)}
-    .win-card h4{margin:0;font-size:1.02rem;color:var(--fg)}
-    .win-card p{color:var(--muted);flex:1}
+    /* FLARE */
+    .flare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;align-items:stretch;margin-top:1rem}
+    .flare-card{background:linear-gradient(180deg, rgba(30,144,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:1rem;min-height:220px;display:flex;flex-direction:column;gap:.5rem;border:1px solid rgba(30,144,255,0.06)}
+    .flare-icon{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg, rgba(30,144,255,0.18), rgba(255,255,255,0.02));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--fg);margin-bottom:.5rem}
 
     /* Perks 6-grid */
     .perks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
-    .perk{background:var(--glass);border-radius:12px;padding:1rem;min-height:90px;color:var(--muted);display:flex;flex-direction:column;gap:.45rem;justify-content:center;transition:transform .24s}
-    .perk:hover{transform:translateY(-6px);box-shadow:0 10px 30px rgba(0,0,0,0.45);border:1px solid rgba(30,144,255,0.08)}
+    .perk{background:var(--glass);border-radius:12px;padding:1rem;min-height:90px;color:var(--muted);display:flex;flex-direction:column;gap:.45rem;justify-content:center;transition:transform .2s}
+    .perk:hover{transform:translateY(-6px)}
 
     /* Waitlist */
     .wait-wrap{max-width:760px;margin:1rem auto 0;padding:1rem;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px}
@@ -97,8 +87,8 @@
     input[type="email"]{flex:1;padding:.85rem 1rem;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--fg);outline:none}
     button[type="submit"]{padding:.85rem 1.1rem;border-radius:999px;border:none;background:var(--accent);color:var(--bg);font-weight:700;cursor:pointer}
 
-    /* Roadmap: vertical center line with dots */
-    .timeline{position:relative;margin-top:2rem;padding:2rem 0}
+    /* Roadmap */
+    .timeline{position:relative;margin-top:1.5rem;padding:2rem 0}
     .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:rgba(255,255,255,0.06);transform:translateX(-50%)}
     .milestone-wrap{display:flex;flex-direction:column;gap:1.6rem;max-width:var(--max-w);margin:0 auto;padding:0 1rem}
     .milestone{width:50%;padding:1rem 1.25rem;position:relative}
@@ -117,12 +107,8 @@
     .contact-form textarea{grid-column:1/3;min-height:120px}
     .contact-form button{grid-column:2/3;justify-self:end;padding:.85rem 1rem;border-radius:8px;border:none;background:var(--accent);color:var(--bg);font-weight:700}
 
-    /* small helpers */
-    .small{font-size:.92rem;color:var(--muted)}
-    .muted{color:var(--muted)}
-
     /* Responsive */
-    @media (max-width:1080px){ .gimmick-grid{grid-template-columns:repeat(2,1fr)} .flare-grid{grid-template-columns:1fr} .win-grid{grid-template-columns:1fr} .perks-grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:1080px){ .gimmick-grid{grid-template-columns:repeat(2,1fr)} .how-grid{grid-template-columns:1fr} .flare-grid{grid-template-columns:1fr} .perks-grid{grid-template-columns:repeat(2,1fr)} }
     @media (max-width:720px){
       header{height:60px}
       .hamburger{display:block}
@@ -136,9 +122,7 @@
       .contact-form{grid-template-columns:1fr}
       .contact-form button{grid-column:1/2;justify-self:stretch}
     }
-
-    /* Disable hover for touch */
-    .no-hover .g-card,.no-hover .flare-card,.no-hover .win-card,.no-hover .perk{transition:none}
+    .no-hover .g-card,.no-hover .flare-card,.no-hover .how-card,.no-hover .perk{transition:none}
   </style>
 </head>
 <body>
@@ -150,8 +134,8 @@
       <ul id="mainNav">
         <li><a href="#home">Home</a></li>
         <li><a href="#future-gimmicks">Gimmicks</a></li>
+        <li><a href="#how">How It Works</a></li>
         <li><a href="#flare">FLARE Protocol</a></li>
-        <li><a href="#winwin">Win-Win</a></li>
         <li><a href="#perks">Perks</a></li>
         <li><a href="#waitlist">Waitlist</a></li>
         <li><a href="#roadmap">Roadmap</a></li>
@@ -165,178 +149,186 @@
     <section id="home" class="hero" role="region" aria-label="Hero">
       <div class="hero-inner wrap center">
         <h1>90% Ideas Die in the Dark — RazeSEED Lights Them Up with AI Armor & Token Shields</h1>
-        <p class="lead">Imagine AI resurrecting your flop as a unicorn simulation, or blockchain flipping failures into 70% token jackpots. Fund fearlessly: AI spots winners, blockchain hedges losses, tokens reward all. Launch Q1 2026 — join the revolution where flops are your FOMO fuel.</p>
+        <p class="lead">
+          Imagine AI bringing weak ideas back stronger, and blockchain turning failed projects into token value.
+          Fund with smarter info, fair rules, and rewards that protect you. Launch Q1 2026 — join the revolution.
+        </p>
 
         <div class="cta-row" role="group" aria-label="Hero CTAs">
           <button class="btn btn-primary" id="joinGimmick">Join Waitlist for Gimmick Drops<br><span style="font-weight:600;font-size:.85rem;color:var(--muted)">Get AI Idea Simulator Free</span></button>
           <a class="btn btn-ghost" href="#blockchain-demo" id="seeDemo">See Blockchain Demo</a>
         </div>
 
-        <div class="hero-note">Quick teaser: VIPs get early access to AI “flop flip” and token time-machines.</div>
+        <div class="hero-note">Quick: sign up to get early gimmicks like the AI simulator and token time machines.</div>
       </div>
     </section>
 
-    <!-- FUTURE GIMMICKS (alt bg) -->
+    <!-- FUTURE GIMMICKS -->
     <section id="future-gimmicks" class="alt" role="region" aria-label="Future Gimmicks">
       <div class="wrap center">
-        <h2>Coming Soon: AI + Blockchain Gimmicks That'll Blow Your Mind (And Your Funding Goals)</h2>
-        <p class="lead">RazeSEED isn't stopping at basics—we're cooking up gimmicks that make funding addictive. AI dreams up “what-if” worlds for your idea, blockchain turns flops into fortune flips. These aren't fluff; they're the edge that makes 90% failures your 10% rocket fuel. Beta for waitlist VIPs—join to test.</p>
+        <h2>Coming Soon: AI + Blockchain Gimmicks</h2>
+        <p class="lead">Short, viral features that make funding fun and useful. Try these in beta as a waitlist VIP.</p>
 
         <div class="gimmick-grid" aria-hidden="false">
           <article class="g-card" aria-labelledby="g1">
             <div class="g-badge">Coming Soon</div>
             <h3 id="g1">AI Flop Flip Simulator</h3>
-            <p>Upload your pitch—AI runs “what-if” scenarios and produces 3 alternate pivot paths with ROI charts, blockchain-stamped for authenticity. Twist: AI resurrects your idea as shareable viral media for buzz.</p>
-            <ul><li>3 simulations per pitch.</li><li>Blockchain timestamp for proof.</li><li>Shareable outputs for X/LinkedIn FOMO.</li></ul>
+            <p>Upload your idea and see three “what-if” paths — keep going, pivot, or try something new.</p>
+            <ul>
+              <li>3 quick simulations per pitch</li>
+              <li>Clear charts showing likely outcomes</li>
+              <li>Shareable reports for social buzz</li>
+            </ul>
           </article>
 
           <article class="g-card" aria-labelledby="g2">
             <div class="g-badge">Coming Soon</div>
             <h3 id="g2">Token Time Machine</h3>
-            <p>Mint RAZESEED? Blockchain 'rewinds' flops: retro burns give 'time bonus' yields (e.g., +5% APR). Twist: 'Fortune Flip' lottery — pool burns for random 10x airdrops.</p>
-            <ul><li>Retro yields on delays.</li><li>Lottery from burn pool.</li><li>On-chain proof—no central control.</li></ul>
+            <p>Miss a milestone? Your token history can still earn bonuses — retroactive rewards from burn pools.</p>
+            <ul>
+              <li>Extra small yields if milestones are missed</li>
+              <li>Lottery-style airdrops from burned tokens</li>
+              <li>All on-chain and transparent</li>
+            </ul>
           </article>
 
           <article class="g-card" aria-labelledby="g3">
             <div class="g-badge">Coming Soon</div>
             <h3 id="g3">Idea Fusion Lab</h3>
-            <p>AI finds fusion partners for co-pitches; blockchain mints hybrid NFTs as shared equity. Twist: community DAO votes on fusions; winners get travel and prize perks.</p>
-            <ul><li>AI suggests 5 fusions.</li><li>NFT as equity token.</li><li>DAO vote for $1K prizes.</li></ul>
+            <p>Mix two ideas together — AI suggests good pairings and mints a shared NFT for the new project.</p>
+            <ul>
+              <li>AI suggests 3–5 fusion partners</li>
+              <li>Shared NFT represents split ownership</li>
+              <li>Community votes pick winners</li>
+            </ul>
           </article>
 
           <article class="g-card" aria-labelledby="g4">
             <div class="g-badge">Coming Soon</div>
             <h3 id="g4">FLOP FOMO Oracle</h3>
-            <p>AI tracks flop trends; blockchain oracles feed real-time data for token boosts. Twist: stake on predictions and win 2x if right—trustless oracle-driven rewards.</p>
-            <ul><li>Weekly trend reports.</li><li>Stake for 2x rewards.</li><li>Blockchain oracles for truth.</li></ul>
+            <p>See weekly trends and stake on predictions — get rewarded when the odds play out.</p>
+            <ul>
+              <li>Weekly trend reports</li>
+              <li>Stake tokens on predictions for rewards</li>
+              <li>Oracle data keeps it honest</li>
+            </ul>
           </article>
         </div>
 
-        <div style="margin-top:1.25rem"><button class="btn btn-primary" onclick="document.getElementById('waitEmail').focus()">Want Beta Access? Join Waitlist Below</button></div>
+        <div style="margin-top:1rem"><button class="btn btn-primary" onclick="document.getElementById('waitEmail').focus()">Want Beta Access? Join Waitlist</button></div>
       </div>
     </section>
 
-<!-- FLARE Protocol Section -->
-<section id="flare" class="section" style="background: radial-gradient(circle at top, #0a0a0a, #000); padding: 6rem 5%; color: #fff; text-align: center;">
-  <h2 style="font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 1.5rem;">
-    Enter the <span style="color:#00b3ff;">FLARE Protocol</span>
-  </h2>
-  <p style="font-size: 1.2rem; color:#ccc; max-width: 800px; margin: 0 auto 3rem;">
-    <strong>FLARE</strong> stands for <strong>Flop-to-Liquidity AI Rewards Ecosystem</strong> — 
-    a protocol built to flip the 90% startup flop rate into fuel for success.  
-    It merges <strong>AI intelligence</strong> and <strong>blockchain mechanics</strong> to create a self-sustaining 
-    loop of innovation: flops burn for scarcity, AI drives smarter pivots, and every action 
-    rewards the ecosystem.  
-    Think of it as RazeSEED’s beating heart — where <strong>failures ignite your fortune</strong>.
-  </p>
-
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:2rem; margin-top:3rem;">
-    <!-- Card 1 -->
-    <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius:20px; padding:2rem; transition: all 0.3s;">
-      <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:1rem;">AI Armory</h3>
-      <p style="color:#ccc; margin-bottom:1rem;">
-        Simulate success and spot flops before they happen. Upload your pitch and FLARE’s AI generates 
-        <strong>“flop-flip” what-if simulations</strong>, ROI charts, and milestone radars that forecast risks 
-        and opportunities.
-      </p>
-      <ul style="list-style:none; padding:0; color:#aaa; font-size:0.95rem; text-align:left;">
-        <li>⚡ Flop Flip Simulator — 3 pivot paths to unicorn potential.</li>
-        <li>📊 Risk Radar — Real-time viability insights.</li>
-        <li>🛡️ Auto-Armor — NFT pitch polish & subdomain generation.</li>
-      </ul>
-    </div>
-
-    <!-- Card 2 -->
-    <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius:20px; padding:2rem; transition: all 0.3s;">
-      <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:1rem;">Blockchain Blaze</h3>
-      <p style="color:#ccc; margin-bottom:1rem;">
-        Every action ignites rewards. FLARE mints RAZESEED tokens on funding, hedges 70% if flopped, and burns 35%+ 
-        to build scarcity — fueling value for all holders.
-      </p>
-      <ul style="list-style:none; padding:0; color:#aaa; font-size:0.95rem; text-align:left;">
-        <li>🔥 Mint Blaze — 6 tokens per $1 funded.</li>
-        <li>💥 Burn Barrier — Flops delete supply, boosting price.</li>
-        <li>🔐 Escrow Flame — Smart-contract milestone safety.</li>
-      </ul>
-    </div>
-
-    <!-- Card 3 -->
-    <div style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border-radius:20px; padding:2rem; transition: all 0.3s;">
-      <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin-bottom:1rem;">Win-Win Inferno</h3>
-      <p style="color:#ccc; margin-bottom:1rem;">
-        In FLARE, everyone wins: seekers gain visibility and tokens, investors get insights and hedges, 
-        and the ecosystem thrives with DAO-voted sustainability.
-      </p>
-      <ul style="list-style:none; padding:0; color:#aaa; font-size:0.95rem; text-align:left;">
-        <li>💸 Inferno Hedges — 70% recovery on failed ventures.</li>
-        <li>🌐 DAO Blaze — Community treasury control.</li>
-        <li>🎯 Gimmick Fire — Beta “token time machines.”</li>
-      </ul>
-    </div>
-  </div>
-
-  <div style="margin-top:3rem;">
-    <a href="#waitlist" 
-       style="display:inline-block; background:#00b3ff; color:#000; padding:1rem 2rem; border-radius:40px; 
-              font-weight:600; text-decoration:none; transition:all 0.3s;">
-      Ignite Your Flare – Join Waitlist for Beta Access
-    </a>
-  </div>
-</section>
-
-
-    <!-- WIN-WIN (alt bg) -->
-    <section id="winwin" class="alt" role="region" aria-label="Win Win">
+    <!-- HOW IT WORKS -->
+    <section id="how" role="region" aria-label="How It Works">
       <div class="wrap center">
-        <h2>The Ultimate Win-Win: No Losers, Only Risers in the RazeSEED Ecosystem</h2>
-        <p class="lead">In a funding world where 90% flops, RazeSEED flips the script: AI empowers pitches, blockchain secures deals, and RAZESEED tokens hedge risks while rewarding commitment. Seekers get visibility and bootstrap cash, investors get de-risked bets with 70% recovery, and the ecosystem thrives on low fees and community-driven growth.</p>
+        <h2>How RazeSEED Works — Simple Steps</h2>
+        <p class="lead">We combine smart AI, fair blockchain rules, and token rewards to make funding less risky and more useful.</p>
 
-        <div class="win-grid" aria-hidden="false">
-          <article class="win-card" aria-labelledby="w1">
-            <h4 id="w1">For Idea Owners: Visibility, Tools, & Token Boosts</h4>
-            <p>Pay a USDT plan ($200 → $5K) for tiered investor views—AI auto-generates your subdomain, crafts an AI NFT (stake for yields), and mints RAZESEED bonuses (10K–300K, locked 60 days). Burns pump scarcity for survivors.</p>
-            <ul><li>Tiered visibility: Basic (5–10) → Elite (all).</li><li>AI toolkit: Pitch templates, ROI charts.</li><li>Token rewards & NFT perks.</li></ul>
+        <div class="how-grid" aria-hidden="false">
+          <div class="how-card">
+            <h3>AI Smarts</h3>
+            <ul>
+              <li>Upload a rough idea — AI makes a clean pitch</li>
+              <li>See simple charts: chance to succeed and common risks</li>
+              <li>Auto-creates a tiny website for your idea</li>
+            </ul>
+          </div>
+
+          <div class="how-card">
+            <h3>Blockchain Trust</h3>
+            <ul>
+              <li>Funds are locked in smart contracts until milestones are met</li>
+              <li>Tokens mint when you buy or fund — transparent on-chain</li>
+              <li>Failed projects burn tokens to help others' value</li>
+            </ul>
+          </div>
+
+          <div class="how-card">
+            <h3>Simple Flows</h3>
+            <ul>
+              <li>Choose direct funding or crowd campaigns</li>
+              <li>AI flags delays and suggests fixes</li>
+              <li>Milestones release funds only after checks</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLARE Protocol -->
+    <section id="flare" class="" role="region" aria-label="FLARE Protocol">
+      <div class="wrap center">
+        <h2>Enter the <span style="color:var(--accent);">FLARE</span> Protocol</h2>
+        <p class="lead"><strong>FLARE</strong> = <strong>Flop-to-Liquidity AI Rewards Ecosystem</strong>.  
+          In plain terms: failed projects become part of how winners grow.</p>
+
+        <ul style="max-width:820px;margin:0 auto 1rem;color:var(--muted);text-align:left;line-height:1.8;padding-left:1rem;">
+          <li>🔥 <strong>Flop-to-Liquidity</strong> — when projects fail, token burns help increase value for holders.</li>
+          <li>🤖 <strong>AI Rewards</strong> — AI helps pivot ideas and gives creators actionable reports.</li>
+          <li>🌱 <strong>Ecosystem</strong> — users, creators, and funders all benefit from a shared, fair system.</li>
+        </ul>
+
+        <div class="flare-grid" aria-hidden="false">
+          <article class="flare-card">
+            <div class="flare-icon" aria-hidden="true">AI</div>
+            <h3>AI Armory</h3>
+            <ul>
+              <li>Upload idea → AI gives 3 easy pivot options</li>
+              <li>Simple chart showing best next steps</li>
+              <li>Auto-generate a mini-site & shareable summary</li>
+            </ul>
           </article>
 
-          <article class="win-card" aria-labelledby="w2">
-            <h4 id="w2">For Funders: De-Risked Bets with AI Insights & Hedges</h4>
-            <p>Browse AI-vetted projects, view ROI & reliability charts, schedule calls, and fund via USDT (escrow). Every $1 funded mints 6 RAZESEED — $10K = 60K tokens (~$600 start; hedges protect a lot).</p>
-            <ul><li>AI analysis: Real-time viability charts.</li><li>Hedge: 70% recovery routes on flops.</li><li>Escrow & low fees for trust.</li></ul>
+          <article class="flare-card">
+            <div class="flare-icon" aria-hidden="true">BC</div>
+            <h3>Blockchain Blaze</h3>
+            <ul>
+              <li>Mint tokens when you fund or buy plans</li>
+              <li>If projects fail, part of supply is burned to help survivors</li>
+              <li>Smart contracts hold funds safely until milestones pass</li>
+            </ul>
           </article>
 
-          <article class="win-card" aria-labelledby="w3">
-            <h4 id="w3">For All: Sustainable Growth with Low Fees & Community Power</h4>
-            <p>2–3% fees fund AI and security; Phase 1 funds devs, Phase 2 to DAO governance. Dynamic supply with burns aligns incentives — referrals & staking (12% APR) create strong network effects.</p>
-            <ul><li>Low fees & DAO governance.</li><li>Burn mechanics: flops fuel scarcity.</li><li>Community perks & events.</li></ul>
+          <article class="flare-card">
+            <div class="flare-icon" aria-hidden="true">🔥</div>
+            <h3>Win-Win Inferno</h3>
+            <ul>
+              <li>Creators get tools and token bonuses</li>
+              <li>Investors get AI insights and token hedges</li>
+              <li>Community votes shape the platform and rewards</li>
+            </ul>
           </article>
         </div>
+
+        <div style="margin-top:1rem"><button class="btn btn-primary" onclick="document.getElementById('waitEmail').focus()">Ignite Your Flare — Join Waitlist</button></div>
       </div>
     </section>
 
     <!-- PERKS -->
-    <section id="perks" role="region" aria-label="Perks">
+    <section id="perks" class="alt" role="region" aria-label="Perks">
       <div class="wrap center">
-        <h2>Epic Perks: Your Unfair Advantage from Day 1 – Powered by AI & Blockchain</h2>
-        <p class="lead">RazeSEED isn't just a platform—it's packed with perks that make funding fun and profitable. From AI-crafted NFTs to token hedges and flights, every action rewards you and the ecosystem.</p>
+        <h2>Epic Perks: What You Get</h2>
+        <p class="lead">Small, clear perks that add up — designed to get you started and keep you earning.</p>
 
         <div class="perks-grid" aria-hidden="false">
-          <div class="perk"><strong>Free AI NFT</strong><div class="small">AI art from your pitch—stake for +2% yields or sell on OpenSea.</div></div>
-          <div class="perk"><strong>Token Hedges</strong><div class="small">6 RAZESEED per $1 — sell for ~70% recovery if flop via token mechanics.</div></div>
-          <div class="perk"><strong>Global Flights</strong><div class="small">Top campaigns get travel budgets to meet investors.</div></div>
-          <div class="perk"><strong>Referrals</strong><div class="small">$10 USDT per friend who buys a plan — AI flags abuse.</div></div>
-          <div class="perk"><strong>AI Tools Suite</strong><div class="small">Subdomains, ROI charts, milestone checks — on-chain proofs save time.</div></div>
-          <div class="perk"><strong>Staking Yields</strong><div class="small">Lock tokens for ~12% APR from platform fees.</div></div>
+          <div class="perk"><strong>Free AI NFT</strong><div class="small">AI makes a cool image for your idea — stake it for small extra yield or sell it.</div></div>
+          <div class="perk"><strong>Token Hedges</strong><div class="small">Minted tokens help cover losses — sell for partial recovery if something flops.</div></div>
+          <div class="perk"><strong>Global Flights</strong><div class="small">Top campaigns can get travel support to meet investors in person.</div></div>
+          <div class="perk"><strong>Referrals</strong><div class="small">Invite friends — earn $10 USDT when they buy a plan.</div></div>
+          <div class="perk"><strong>AI Tools Suite</strong><div class="small">Subdomains, charts, milestone checks — save time on pitching.</div></div>
+          <div class="perk"><strong>Staking Yields</strong><div class="small">Lock tokens to earn ~12% APR from platform fees.</div></div>
         </div>
 
-        <div style="margin-top:1rem"><button class="btn btn-primary" onclick="document.getElementById('waitEmail').focus()">Unlock These Perks – Join the Waitlist</button></div>
+        <div style="margin-top:1rem"><button class="btn btn-primary" onclick="document.getElementById('waitEmail').focus()">Unlock Perks — Join Waitlist</button></div>
       </div>
     </section>
 
     <!-- WAITLIST -->
-    <section id="waitlist" class="alt" role="region" aria-label="Waitlist">
+    <section id="waitlist" role="region" aria-label="Waitlist">
       <div class="wrap center">
         <h2>Ready to Raze & Seed? Join the Waitlist Now</h2>
-        <p class="lead">Be among the first for Q1 2026 launch: Early dashboard access, AI pitch tips via email, and bonus RAZESEED mints (+5K tokens for basic). 1,200+ already in — VIPs get early gimmick & FLARE beta access.</p>
+        <p class="lead">Get early dashboard access, quick AI tips by email, and bonus RAZESEED tokens on your first plan buy. First 1,000 get extra mints.</p>
 
         <div class="wait-wrap">
           <div class="small">Waitlist Growth: <strong id="waitCount">1,200</strong> / 5,000</div>
@@ -347,36 +339,55 @@
             <button type="submit">Join & Get Bonus</button>
           </form>
 
-          <div id="waitSuccess" class="small" style="display:none;margin-top:.6rem;color:#d1ffd1">You're in! Check email for AI funding guide & waitlist bonus.</div>
-          <div style="margin-top:.6rem;color:var(--muted)">Follow: <a href="https://x.com/RazeSEED" target="_blank">@RazeSEED</a> | Discord invite coming soon.</div>
+          <div id="waitSuccess" class="small" style="display:none;margin-top:.6rem;color:#d1ffd1">You're in! Check email for AI tips & bonus details.</div>
+          <div style="margin-top:.6rem;color:var(--muted)">Follow: <a href="https://x.com/RazeSEED" target="_blank">@RazeSEED</a> | Discord coming soon.</div>
         </div>
       </div>
     </section>
 
     <!-- ROADMAP -->
-    <section id="roadmap" role="region" aria-label="Roadmap">
+    <section id="roadmap" class="alt" role="region" aria-label="Roadmap">
       <div class="wrap center">
-        <h2>Our Roadmap: From Buzz to Billions – Join the Journey</h2>
-        <p class="lead">We're moving fast: Q4 2025 starts with community build, Q1 2026 launches MVP with AI tools and token mints, scaling to DAO governance by Y2. Early joiners get bonus mints; flops fuel burns for all.</p>
+        <h2>Our Roadmap — Simple Milestones</h2>
+        <p class="lead">Short version: build the community, launch tools, scale features, then give control to the community.</p>
 
         <div class="timeline" aria-hidden="false">
           <div class="milestone-wrap">
-            <div class="milestone left" data-anim><div class="dot" aria-hidden="true"></div><h4>Q4 2025 — Waitlist Buzz & Whitepaper Drop</h4><p>Build community, tease tokenomics & AI demos. Key: 5K signups for early mint bonuses.</p></div>
-            <div class="milestone right" data-anim><div class="dot" aria-hidden="true"></div><h4>Q1 2026 — MVP Launch: Dashboards & Mints</h4><p>Google login, plan buys, AI subdomains/NFTs, first RAZESEED mints. Key: Beta 1K seekers; 70% hedge live.</p></div>
-            <div class="milestone left" data-anim><div class="dot" aria-hidden="true"></div><h4>Q2 2026 — Scale & Features: Crowdfunding + Events</h4><p>Pooled funding, in-app video, global meets. Key: $10M milestone, burns activate, AI gimmick beta.</p></div>
-            <div class="milestone right" data-anim><div class="dot" aria-hidden="true"></div><h4>Y2 2027 — DAO & Exchanges: Community Power</h4><p>Staking APR, DAO votes, CEX listings. Key: 20K users, 20% token growth, token time machine rewards.</p></div>
+            <div class="milestone left" data-anim>
+              <div class="dot" aria-hidden="true"></div>
+              <h4>Q4 2025 — Waitlist & Whitepaper</h4>
+              <p>Start community signups, publish how the token works, demo AI features.</p>
+            </div>
+
+            <div class="milestone right" data-anim>
+              <div class="dot" aria-hidden="true"></div>
+              <h4>Q1 2026 — MVP Launch</h4>
+              <p>Open dashboards, mint first tokens on funding, beta AI tools for early users.</p>
+            </div>
+
+            <div class="milestone left" data-anim>
+              <div class="dot" aria-hidden="true"></div>
+              <h4>Q2 2026 — Scale & Events</h4>
+              <p>Add pooled crowdfunding, live video pitches, and start global meetups.</p>
+            </div>
+
+            <div class="milestone right" data-anim>
+              <div class="dot" aria-hidden="true"></div>
+              <h4>Y2 2027 — DAO & Exchanges</h4>
+              <p>Enable staking, DAO voting, and list on exchanges for wider access.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="alt" role="region" aria-label="Contact">
+    <section id="contact" role="region" aria-label="Contact">
       <div class="wrap center">
         <h2>Contact Us</h2>
-        <p class="lead">Questions, partnerships, or press — drop a short message and we'll get back to you.</p>
+        <p class="lead">Have questions or want to partner? Send a quick message and we'll reply.</p>
 
-        <div class="contact-card" role="form" aria-labelledby="contactForm">
+        <div class="contact-card">
           <form id="contactForm" class="contact-form" novalidate>
             <input name="name" placeholder="Your name" required />
             <input name="email" type="email" placeholder="Your email" required />
@@ -393,7 +404,7 @@
   <footer style="padding:2rem;text-align:center;color:var(--muted)">© 2025 RazeSEED — FLARE Protocol — AI + Blockchain for fearless funding.</footer>
 
   <script>
-    // simple hamburger toggle
+    // hamburger toggle
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('mainNav');
     hamburger?.addEventListener('click', ()=> {
@@ -413,7 +424,7 @@
       }
     });
 
-    // smooth internal links scroll with header offset
+    // smooth scroll (header offset)
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', e=>{
         const href = a.getAttribute('href');
@@ -429,11 +440,9 @@
     });
 
     // disable hover effects on touch devices
-    if(('ontouchstart' in window) || navigator.maxTouchPoints > 0){
-      document.documentElement.classList.add('no-hover');
-    }
+    if(('ontouchstart' in window) || navigator.maxTouchPoints > 0) document.documentElement.classList.add('no-hover');
 
-    // Waitlist: mock validation + progress
+    // Waitlist form (mock)
     const waitForm = document.getElementById('waitForm');
     const waitEmail = document.getElementById('waitEmail');
     const waitCount = document.getElementById('waitCount');
@@ -443,7 +452,7 @@
     waitForm?.addEventListener('submit', e=>{
       e.preventDefault();
       const email = (waitEmail.value||'').trim();
-      if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { alert('Please enter a valid email'); return; }
+      if(!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert('Please enter a valid email'); return; }
       let cur = parseInt(waitCount.textContent.replace(/,/g,'')) || 1200;
       cur += 1;
       waitCount.textContent = cur.toLocaleString();
@@ -453,24 +462,21 @@
       waitForm.reset();
     });
 
-    // Contact: simple mock
+    // Contact form (mock)
     const contactForm = document.getElementById('contactForm');
     contactForm?.addEventListener('submit', e=>{
       e.preventDefault();
       const name = (contactForm.name.value||'').trim();
       const email = (contactForm.email.value||'').trim();
-      if(!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){
-        alert('Please enter name and a valid email');
-        return;
-      }
+      if(!name || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ alert('Please enter name and a valid email'); return; }
       alert('Thanks — message sent (mock). We will follow up.');
       contactForm.reset();
     });
 
-    // reveal animation using IntersectionObserver (no external libs)
-    const animTargets = document.querySelectorAll('[data-anim], .g-card, .flare-card, .win-card, .perk, .milestone');
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(en => {
+    // reveal-on-scroll using IntersectionObserver (no external libs)
+    const targets = document.querySelectorAll('.g-card, .how-card, .flare-card, .perk, .milestone');
+    const io = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(en=>{
         if(en.isIntersecting){
           en.target.style.opacity = 1;
           en.target.style.transform = 'translateY(0)';
@@ -479,25 +485,14 @@
         }
       });
     }, {threshold:0.12});
-
-    animTargets.forEach(el=>{
+    targets.forEach(el=>{
       el.style.opacity = 0;
       el.style.transform = 'translateY(12px)';
       io.observe(el);
     });
 
-    // account for initial hash offsets
-    function offsetScroll(){
-      if(location.hash){
-        const el = document.querySelector(location.hash);
-        if(el){
-          setTimeout(()=> {
-            const top = el.getBoundingClientRect().top + window.scrollY - (72 + 8);
-            window.scrollTo({top,behavior:'smooth'});
-          },60);
-        }
-      }
-    }
+    // offset anchors on load/hash change
+    function offsetScroll(){ if(location.hash){ const el=document.querySelector(location.hash); if(el){ setTimeout(()=>{ const top=el.getBoundingClientRect().top+window.scrollY-(72+8); window.scrollTo({top,behavior:'smooth'}); },60); } } }
     window.addEventListener('load', offsetScroll);
     window.addEventListener('hashchange', offsetScroll);
   </script>
