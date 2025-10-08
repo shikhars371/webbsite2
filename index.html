@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RazeSEED - Version 2</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Poppins', sans-serif; background-color:#000; color:#fff; overflow-x:hidden; }
-  header { position:fixed; top:0; width:100%; background: rgba(0,0,0,0.95); backdrop-filter: blur(15px); display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; z-index:1000; border-bottom:1px solid #222; }
-  .logo { font-size:1.8rem; font-weight:700; letter-spacing:2px; font-family: 'Playfair Display', serif; }
+  body { font-family: 'Poppins', sans-serif; background:#000; color:#fff; line-height:1.6; overflow-x:hidden; }
+  header { position:fixed; top:0; width:100%; background:rgba(0,0,0,0.95); backdrop-filter:blur(15px); display:flex; justify-content:space-between; align-items:center; padding:1rem 5%; z-index:1000; border-bottom:1px solid #222; }
+  .logo { font-size:1.8rem; font-weight:700; font-family:'Playfair Display', serif; }
   nav ul { display:flex; gap:2rem; list-style:none; }
   nav a { color:#fff; text-decoration:none; font-weight:500; font-size:1rem; transition:color 0.3s; }
   nav a:hover { color:#ccc; }
 
   /* Hero Section */
-  .hero { display:flex; justify-content:center; align-items:flex-start; min-height:90vh; padding:10rem 5% 5rem 5%; text-align:center; flex-direction:column; background: linear-gradient(180deg, #000, #111); }
-  .hero h1 { font-family: 'Playfair Display', serif; font-size:clamp(2rem,5vw,4rem); line-height:1.2; margin-bottom:2rem; color:#fff; }
-  .hero p { font-size:1.2rem; margin-bottom:2rem; color:#ccc; max-width:700px; margin-left:auto; margin-right:auto; text-align:left; }
-  .hero ul { list-style:disc; margin-top:1rem; color:#ccc; padding-left:1.2rem; }
+  .hero { display:flex; justify-content:center; align-items:flex-start; flex-direction:column; min-height:90vh; padding:8rem 5% 5rem 5%; text-align:center; background: linear-gradient(180deg, #000, #111); }
+  .hero h1 { font-family:'Playfair Display', serif; font-size:clamp(2rem,5vw,4rem); margin-bottom:2rem; color:#fff; }
+  .hero p { font-size:1.2rem; margin-bottom:1rem; color:#ccc; max-width:700px; margin-left:auto; margin-right:auto; }
+  .hero ul { list-style:disc; padding-left:1.5rem; text-align:left; max-width:700px; margin:0 auto; color:#ccc; }
   .hero li { margin-bottom:0.5rem; }
   .hero button { background:#fff; color:#000; border:none; padding:0.8rem 2rem; font-size:1rem; border-radius:30px; cursor:pointer; font-weight:600; transition:all 0.3s; margin:0.5rem; }
   .hero button:hover { background:#999; transform:scale(1.05); }
 
   /* Sections */
-  .section { padding:6rem 5%; text-align:center; position:relative; }
-  .section h2 { font-family: 'Playfair Display', serif; font-size:clamp(1.8rem,4vw,3rem); margin-bottom:1rem; }
-  .section p { color:#ccc; font-size:1rem; max-width:700px; margin:0 auto; }
+  section { padding:6rem 5%; }
+  section h2 { font-family:'Playfair Display', serif; font-size:clamp(1.8rem,4vw,3rem); margin-bottom:1rem; text-align:center; }
+  section p { color:#ccc; font-size:1rem; max-width:700px; margin:0 auto 2rem auto; text-align:center; }
 
-  /* Cards */
-  .card-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-top:3rem; }
+  /* Card containers */
+  .card-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; margin-top:2rem; }
   .card { background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding:2rem; border-radius:20px; text-align:left; transition:transform 0.3s; display:flex; flex-direction:column; }
   .card:hover { transform:scale(1.03); }
   .card h3 { margin-bottom:0.8rem; color:#fff; font-weight:600; }
@@ -38,15 +38,21 @@
 
   /* Roadmap */
   .roadmap { position:relative; margin-top:4rem; display:flex; flex-direction:column; align-items:center; }
-  .roadmap::before { content: ''; position:absolute; width:3px; background:#444; top:0; bottom:0; left:50%; transform:translateX(-50%); }
+  .roadmap::before { content:''; position:absolute; width:3px; background:#444; top:0; bottom:0; left:50%; transform:translateX(-50%); }
   .milestone { position:relative; width:50%; padding:2rem; text-align:left; }
   .milestone:nth-child(even) { left:50%; text-align:right; }
   .milestone::before { content:''; position:absolute; top:20px; width:20px; height:20px; background:#fff; border-radius:50%; border:3px solid #000; z-index:1; }
   .milestone:nth-child(odd)::before { right:-10px; }
   .milestone:nth-child(even)::before { left:-10px; }
+
+  /* Form */
+  form { display:flex; justify-content:center; flex-wrap:wrap; gap:1rem; margin-top:2rem; }
+  form input[type="email"] { padding:0.8rem 1rem; width:300px; border-radius:25px; border:none; outline:none; }
+  form button { padding:0.8rem 1.5rem; border-radius:25px; border:none; background:#fff; color:#000; font-weight:600; cursor:pointer; }
+
   footer { text-align:center; padding:2rem 5%; font-size:0.9rem; color:#777; border-top:1px solid #222; }
 
-  @media (max-width:768px){
+  @media(max-width:768px){
     nav ul { display:none; }
     .hero { padding-top:7rem; min-height:80vh; }
     .card-container { grid-template-columns:1fr; }
@@ -80,10 +86,10 @@
   <h1>90% Ideas Die in the Dark—RazeSEED Lights Them Up with AI Armor & Token Shields</h1>
   <p>Most ideas fail silently—but yours doesn’t have to. With RazeSEED you get:</p>
   <ul>
-    <li>AI reviews your idea, pitch decks, and documents for strengths, risks, and ROI.</li>
-    <li>Generate an MVP website instantly to showcase your idea.</li>
-    <li>Option to submit full pitch, business plan, and documents for AI analysis before investor exposure.</li>
-    <li>Investors can explore your AI-generated site, run analyses, see ROI, and make funding decisions.</li>
+    <li>AI reviews your idea, pitch decks, and documents for clarity, risks, and ROI.</li>
+    <li>Instantly generate an MVP website showcasing your idea.</li>
+    <li>Upload full pitch, business plan, or documents for detailed AI analysis.</li>
+    <li>Submit to investors when satisfied; investors can explore the AI-generated site, view reports, and decide on funding.</li>
   </ul>
   <div>
     <button>Join Waitlist for Early Innovations</button>
@@ -93,35 +99,31 @@
 
 <!-- How It Works -->
 <section id="how-it-works" class="section">
-  <h2>How RazeSEED Makes Funding Effortless & Explosive</h2>
-  <p>We blend AI for smart decision-making with blockchain for trust. Here's what you get:</p>
+  <h2>How RazeSEED Works</h2>
+  <p>Simple steps to turn your idea into investor-ready projects:</p>
   <div class="card-container">
     <div class="card">
-      <h3>AI Smarts: Your Idea, Supercharged</h3>
-      <p>Upload your idea or full pitch deck:</p>
+      <h3>Upload Your Idea</h3>
       <ul>
-        <li>AI generates reports highlighting risks, strengths, and ROI.</li>
-        <li>Automatic MVP website creation for your project.</li>
-        <li>Milestone tracking and progress verification.</li>
-        <li>Alternative paths and 'what-if' simulations for smarter decisions.</li>
+        <li>Include pitch decks, business plans, or documents</li>
+        <li>AI scans for risks and strengths</li>
+        <li>Generate instant MVP website for demonstration</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Blockchain Power: Trust & Rewards</h3>
+      <h3>AI Analysis & Reports</h3>
       <ul>
-        <li>Funds escrowed via smart contracts for milestones.</li>
-        <li>Tokens minted automatically on funding or plan purchases.</li>
-        <li>Failures burn tokens to create scarcity, benefiting survivors.</li>
-        <li>Everything is transparent, tamper-proof, and decentralized.</li>
+        <li>Receive clear ROI projections</li>
+        <li>See alternative strategies for success</li>
+        <li>Flag potential delays or issues</li>
       </ul>
     </div>
     <div class="card">
-      <h3>Seamless Flows: Pitch to Profit</h3>
+      <h3>Investor Submission</h3>
       <ul>
-        <li>Direct investor matching or crowdfunding options.</li>
-        <li>In-app chat/video for pitches, AI-flagged milestone releases.</li>
-        <li>Low fees (2-3%) while ecosystem grows sustainably.</li>
-        <li>Investors get hedges and AI insights for safer decisions.</li>
+        <li>Submit only when satisfied</li>
+        <li>Investors can explore generated website</li>
+        <li>Run AI analysis and make funding decisions</li>
       </ul>
     </div>
   </div>
@@ -129,200 +131,207 @@
 
 <!-- FLARE Protocol -->
 <section id="flare" class="section">
-  <h2>Enter the FLARE Protocol: Where 90% Flops Ignite Your 10% Fortune</h2>
+  <h2>Enter the FLARE Protocol</h2>
   <p>FLARE = <strong>Flop-to-Liquidity AI Rewards Ecosystem</strong></p>
-  <p>What FLARE does:</p>
-  <ul style="list-style: disc; color:#ccc; text-align:left; display:inline-block; margin-top:1rem;">
-    <li>AI armory: Simulate success, spot risks, generate auto MVP websites.</li>
-    <li>Blockchain blaze: Mint rewards, escrow funds, burn failures for scarcity.</li>
-    <li>Win-Win Inferno: Seekers get tools and tokens, investors get hedges, ecosystem grows sustainably.</li>
-  </ul>
+  <p>It turns failures into opportunities with AI + Blockchain:</p>
   <div class="card-container">
     <div class="card">
       <h3>AI Armory</h3>
       <ul>
-        <li>Flop Flip Simulator: AI pivots your idea to potential success.</li>
-        <li>Risk Radar: Shows viability and reliability before investors see.</li>
-        <li>Auto-Armor: NFT generation and pitch polish in seconds.</li>
+        <li>Simulate success and spot potential flops</li>
+        <li>Flop Flip Simulator: 3 alternative paths with ROI charts</li>
+        <li>Generate AI-based subdomains and NFT art instantly</li>
       </ul>
     </div>
     <div class="card">
       <h3>Blockchain Blaze</h3>
       <ul>
-        <li>Mint Blaze: Bonuses and hedges on every funding event.</li>
-        <li>Burn Barrier: Flops delete tokens to increase scarcity.</li>
-        <li>Escrow Flame: Secure releases and DAO treasury governance.</li>
+        <li>Mint RAZESEED on plans/funding (6 per $1)</li>
+        <li>70% hedge if project fails</li>
+        <li>Burn 35%+ on failures to increase scarcity</li>
       </ul>
     </div>
     <div class="card">
       <h3>Win-Win Inferno</h3>
       <ul>
-        <li>Inferno Hedges: 70% recovery via token trades.</li>
-        <li>DAO Blaze: Vote on treasury post-milestones.</li>
-        <li>Innovation Fire: Beta 'token time machines' retro rewards.</li>
+        <li>Seekers get visibility, tools, and tokens</li>
+        <li>Investors get AI insights and hedges</li>
+        <li>Platform gets low fees and DAO governance</li>
       </ul>
     </div>
   </div>
-  <button>Ignite Your Flare – Join Waitlist for Beta Access</button>
+  <div style="text-align:center; margin-top:2rem;">
+    <button>Ignite Your Flare – Join Waitlist</button>
+  </div>
 </section>
 
 <!-- Win-Win Section -->
 <section id="win-win" class="section">
-  <h2>The Ultimate Win-Win: No Losers, Only Risers in the RazeSEED Ecosystem</h2>
+  <h2>The Ultimate Win-Win</h2>
+  <p>No losers—only risers. Here's how everyone benefits:</p>
   <div class="card-container">
     <div class="card">
       <h3>For Idea Owners</h3>
       <ul>
-        <li>Tiered visibility to investors (Basic to Elite).</li>
-        <li>AI toolkit: Pitch formatting, ROI charts, milestone templates.</li>
-        <li>Token rewards: Mint on buy, hedge 70% of trades.</li>
-        <li>NFT perks: AI-gen art for extra exposure.</li>
+        <li>Tiered visibility to investors</li>
+        <li>AI tools for pitch and milestones</li>
+        <li>RAZESEED tokens and NFT perks</li>
       </ul>
     </div>
     <div class="card">
-      <h3>For Funders / Investors</h3>
+      <h3>For Investors</h3>
       <ul>
-        <li>AI-vetted project analysis with ROI, risk flags.</li>
-        <li>Secure funding via blockchain escrow.</li>
-        <li>Token hedges for 70% recovery on flops.</li>
-        <li>In-app calls and milestone dashboards for real-time tracking.</li>
+        <li>AI analysis of projects</li>
+        <li>Hedge 70% of risk via token trades</li>
+        <li>Secure funding with blockchain escrow</li>
       </ul>
     </div>
     <div class="card">
-      <h3>For All: Ecosystem Growth</h3>
+      <h3>For All</h3>
       <ul>
-        <li>Low fees: 2-3% per funding event.</li>
-        <li>DAO governance: Community voting post milestones.</li>
-        <li>Burn mechanics: 35%+ yearly token burns for scarcity.</li>
-        <li>Referral and staking rewards to grow platform virally.</li>
+        <li>Low platform fees</li>
+        <li>DAO governance for treasury</li>
+        <li>Community perks and staking</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- Epic Perks -->
+<!-- Perks Section -->
 <section id="perks" class="section">
-  <h2>Epic Perks: Your Unfair Advantage from Day 1 – Powered by AI & Blockchain</h2>
+  <h2>Epic Perks</h2>
+  <p>Features that make funding addictive and profitable:</p>
   <div class="card-container">
     <div class="card">
       <h3>Free AI NFT</h3>
-      <p>Custom AI-generated art from your idea. Stake for +2% yields or sell on OpenSea.</p>
+      <ul>
+        <li>Custom art for your idea</li>
+        <li>Stake for +2% yields</li>
+        <li>Sell on OpenSea for extra buzz</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Token Hedges</h3>
-      <p>Mint RAZESEED tokens with every funding, sell for 70% recovery if flop.</p>
+      <ul>
+        <li>Mint RAZESEED on funding</li>
+        <li>70% recovery if flop</li>
+        <li>Blockchain burns increase scarcity</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Global Flights</h3>
-      <p>Top campaigns get free tickets to meet investors worldwide.</p>
+      <ul>
+        <li>Top campaigns get investor meet tickets</li>
+        <li>AI matches with investors</li>
+        <li>Blockchain ensures deals</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Referrals</h3>
-      <p>$10 USDT per friend who joins. AI ensures no abuse.</p>
+      <ul>
+        <li>$10 USDT per friend</li>
+        <li>Blockchain prevents abuse</li>
+        <li>AI flags fake accounts</li>
+      </ul>
     </div>
     <div class="card">
       <h3>AI Tools Suite</h3>
-      <p>Subdomains, ROI charts, milestone checks—all blockchain integrated.</p>
+      <ul>
+        <li>Subdomains, ROI charts, milestone checks</li>
+        <li>Blockchain-integrated proofs</li>
+        <li>Saves time on due diligence</li>
+      </ul>
     </div>
     <div class="card">
       <h3>Staking Yields</h3>
-      <p>Lock tokens for 12% APR from platform fees. Win-win for everyone.</p>
+      <ul>
+        <li>Lock RAZESEED for 12% APR</li>
+        <li>Tokens grow while funding AI upgrades</li>
+      </ul>
     </div>
   </div>
-  <button>Unlock These Perks – Join the Waitlist</button>
 </section>
 
-<!-- Future Innovations -->
+<!-- Future Innovations Section -->
 <section id="future-innovations" class="section">
-  <h2>Coming Soon: AI + Blockchain Innovations That'll Boost Your Funding Goals</h2>
-  <p>Short teasers for upcoming features. Join waitlist to beta test:</p>
+  <h2>Future Innovations</h2>
+  <p>New AI + Blockchain features that will excite you:</p>
   <div class="card-container">
     <div class="card">
       <h3>AI Flop Flip Simulator</h3>
       <ul>
-        <li>Upload your pitch, get 3 alternate success paths.</li>
-        <li>Blockchain timestamp for authenticity.</li>
-        <li>Shareable reports for social buzz.</li>
+        <li>Run 'what-if' simulations on your pitch</li>
+        <li>3 alternate paths with ROI charts</li>
+        <li>Shareable outputs for social buzz</li>
       </ul>
     </div>
     <div class="card">
       <h3>Token Time Machine</h3>
       <ul>
-        <li>Retroactive rewards for missed milestones.</li>
-        <li>Lottery from burned tokens for 10x prizes.</li>
-        <li>On-chain proof—fully decentralized.</li>
+        <li>Retroactive rewards on missed milestones</li>
+        <li>Lottery from burned tokens</li>
+        <li>On-chain proof of rewards</li>
       </ul>
     </div>
     <div class="card">
       <h3>Idea Fusion Lab</h3>
       <ul>
-        <li>AI matches ideas for co-pitches.</li>
-        <li>NFT equity for hybrid projects.</li>
-        <li>Community DAO votes on best fusions.</li>
+        <li>Combine ideas with AI suggestions</li>
+        <li>Hybrid NFTs for shared equity</li>
+        <li>DAO community vote on winners</li>
       </ul>
     </div>
     <div class="card">
       <h3>FLOP FOMO Oracle</h3>
       <ul>
-        <li>AI predicts flop trends weekly.</li>
-        <li>Stake tokens on predictions to earn 2x.</li>
-        <li>Blockchain oracles for real-time accuracy.</li>
+        <li>AI predicts trends</li>
+        <li>Stake tokens for rewards</li>
+        <li>Blockchain ensures real-time accuracy</li>
       </ul>
     </div>
   </div>
-  <button>Want Beta Access? Join Waitlist Below</button>
 </section>
 
-<!-- Waitlist -->
+<!-- Waitlist Section -->
 <section id="waitlist" class="section">
-  <h2>Ready to Raze & Seed? Join the Waitlist Now</h2>
-  <p>Be among the first for Q1 2026 launch:</p>
-  <ul style="list-style: disc; color:#ccc; text-align:left; display:inline-block; margin-top:1rem;">
-    <li>Early dashboard access</li>
-    <li>AI pitch tips via email</li>
-    <li>Bonus RAZESEED mints on first plan buy</li>
-    <li>Beta access to innovations like AI 'Flop Flip' simulations</li>
-  </ul>
-  <p>Waitlist Growth: 1,200 / 5,000 (24%)</p>
-  <form style="margin-top:2rem;">
-    <input type="email" placeholder="Enter your email" required style="padding: 0.8rem 1rem; width:300px; border-radius:25px; border:none; outline:none; margin-right:1rem;"/>
-    <button type="submit" style="padding:0.8rem 1.5rem; border-radius:25px; border:none; background:#fff; color:#000; font-weight:600; cursor:pointer;">Join & Get Bonus</button>
+  <h2>Join the Waitlist</h2>
+  <p>Early access to beta features, AI tips, and bonus RAZESEED tokens.</p>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Join & Get Bonus</button>
   </form>
-  <p>Follow for updates: @RazeSEED on X | Discord Invite Coming Soon</p>
 </section>
 
-<!-- Roadmap -->
+<!-- Roadmap Section -->
 <section id="roadmap" class="section">
-  <h2>Our Roadmap: From Buzz to Billions – Join the Journey</h2>
+  <h2>Our Roadmap</h2>
   <div class="roadmap">
     <div class="milestone">
-      <h3>Q4 2025: Waitlist Buzz & Whitepaper Drop</h3>
-      <p>Community build, teaser AI demos, 5K signups for early mint bonuses.</p>
+      <h3>Q4 2025</h3>
+      <p>Community build, whitepaper drop, early mint bonuses.</p>
     </div>
     <div class="milestone">
-      <h3>Q1 2026: MVP Launch – Dashboards & Mints</h3>
-      <p>Google login, plan buys, AI subdomains/NFTs, 70% hedge live, blockchain escrow activates.</p>
+      <h3>Q1 2026</h3>
+      <p>MVP launch, AI tools, token mints, beta tests.</p>
     </div>
     <div class="milestone">
-      <h3>Q2 2026: Scale & Features – Crowdfunding + Events</h3>
-      <p>Pooled funding module, global investor meets, $10M funded milestone, AI 'Flop Flip' beta.</p>
+      <h3>Q2 2026</h3>
+      <p>Crowdfunding module, global events, burns for scarcity.</p>
     </div>
     <div class="milestone">
-      <h3>Y2 2027: DAO & Exchanges – Community Power</h3>
-      <p>Staking APR, DAO votes on treasury, CEX listings, 20% token growth, full ecosystem activation.</p>
+      <h3>Y2 2027</h3>
+      <p>DAO governance, staking, exchange listings, token time machine rewards.</p>
     </div>
   </div>
 </section>
 
-<!-- Contact -->
+<!-- Contact Section -->
 <section id="contact" class="section">
   <h2>Contact Us</h2>
-  <p>Have questions or suggestions? Reach out to our team:</p>
-  <form style="margin-top:2rem;">
-    <input type="text" placeholder="Your Name" required style="padding:0.8rem 1rem; width:300px; border-radius:25px; border:none; outline:none; margin-bottom:1rem; display:block;"/>
-    <input type="email" placeholder="Your Email" required style="padding:0.8rem 1rem; width:300px; border-radius:25px; border:none; outline:none; margin-bottom:1rem; display:block;"/>
-    <textarea placeholder="Your Message" required style="padding:0.8rem 1rem; width:300px; border-radius:25px; border:none; outline:none; margin-bottom:1rem; display:block; height:100px;"></textarea>
-    <button type="submit" style="padding:0.8rem 1.5rem; border-radius:25px; border:none; background:#fff; color:#000; font-weight:600; cursor:pointer;">Send Message</button>
+  <p>Have questions? Reach out to our team.</p>
+  <form>
+    <input type="email" placeholder="Your Email" required>
+    <button type="submit">Send</button>
   </form>
 </section>
 
